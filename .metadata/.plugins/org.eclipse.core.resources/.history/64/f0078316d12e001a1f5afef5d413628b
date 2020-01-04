@@ -1,0 +1,15 @@
+spring:
+  data:
+    wititimer:
+      jdbc-url: jdbc:mariadb://rds-mariadb.ch4ipcxitqs1.ap-northeast-2.rds.amazonaws.com:3306/wickies?useUnicode=yes&characterEncoding=UTF-8
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: admin
+      password: password
+  jpa:
+    properties:
+      hibernate:
+        #show_sql: true
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    generate-ddl: true
