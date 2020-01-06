@@ -1,1 +1,4 @@
 rootProject.name = 'demo'
+
+spring.mvc.view.prefix="/WEB-INF/views"
+spring.mvc.view.suffix=".jsp"

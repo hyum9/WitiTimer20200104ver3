@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,19 +25,19 @@ public class MemberController {
     
     @PostMapping("/insert") // CREATE
     public Member insert(@RequestBody Map<String, String> map){
-        return memberRepository.save(
+        return (memberRepository).save(
                 new Member(map.get("name"), intParser(map.get("age")), map.get("address"))
         );
     }
 
     @GetMapping("/select") // READ
     public List<Member> selectAll(){
-        return memberRepository.findAll();
+        return (memberRepository.findAll());
     }
 
     @GetMapping("/select/{id}") // READ
     public Member selectOne(@PathVariable("id") long id){
-        return memberRepository.findById(id).orElse(null);
+        return (memberRepository.findById(id).orElse(null));
     }
 
     @PostMapping("/update/{id}") // UPDATE
