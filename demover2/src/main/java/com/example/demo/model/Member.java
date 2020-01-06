@@ -27,14 +27,31 @@ public class Member {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private long id;
+	
+	@Column(name="password")
 	private String password;
+	
+	@Column(name="name")
 	private String name;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="grade")
 	private int grade;
+	
+	@Column(name="language")
 	private int language;
+	
+	@Column(name="math")
 	private int math;
+	
+	@Column(name="science")
 	private int science;
+	
+	@Column(name="socialstudy")
 	private int socialstudy;
+	
 	@CreationTimestamp
 	private Date createdAt;
 	
@@ -51,8 +68,9 @@ public class Member {
 		this.createdAt=createdAt;
 	}
 	
-	public Member(String password, String name, String email, int grade)
+	public Member(long id, String password, String name, String email, int grade)
 	{
+		this.id=id;
 		this.password=password;
 		this.name=name;
 		this.email=email;
@@ -61,5 +79,6 @@ public class Member {
 		this.math=0;
 		this.science=0;
 		this.socialstudy=0;
+		this.createdAt = new Date();
 	}
 }

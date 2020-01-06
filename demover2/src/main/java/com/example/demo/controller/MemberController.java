@@ -22,7 +22,7 @@ public class MemberController {
 	@PostMapping("/insert")
 	public Member insert(@RequestBody Map<String, String> map) 
 	{
-		return memberRepository.save(new Member(map.get("password"), map.get("email"), map.get("name"), Integer.parseInt((map.get("age")))));
+		return memberRepository.save(new Member(Long.parseLong(map.get("id")), map.get("password"),map.get("name"), map.get("email"), Integer.parseInt((map.get("grade")))));
 	}
 
 }
